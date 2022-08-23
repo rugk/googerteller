@@ -7,8 +7,10 @@ const googleCloudIpApi = 'https://www.gstatic.com/ipranges/cloud.json'; // TODO:
 let ipv4Checker = null;
 let ipv6Checker = null;
 
-// var sound = new Audio(browser.runtime.getURL("/src/background/geigersound.ogg"));
-let sound;
+// let sound = new Audio(browser.runtime.getURL("/src/background/geiger.mp3"));
+// let sound = new Audio(browser.runtime.getURL("./geiger.mp3"));
+let sound = new Audio("./geiger.mp3");
+// let sound;
 
 /**
  * Fetch the latest Google IP ranges.
@@ -47,7 +49,7 @@ async function listener(details) {
         return;
     }
 
-    dnsResult.addresses.forEach(requestIp => {
+    dnsResult.addresses.forEach(async requestIp => {
         if (ipv4Checker(requestIp)) {
             console.count('found requests, IPv4');
         } else if (ipv6Checker(requestIp)) {
@@ -56,14 +58,16 @@ async function listener(details) {
             return;
         };
 
-        loadSound();
-
         // in order to always control a new sound we need to clone the element
         const temporarySound = sound
             .cloneNode()
-
         temporarySound.playbackRate = 0.5;
-        temporarySound.play();
+
+        try {
+            await temporarySound.play();
+        } catch (error) {
+            console.error('sound playback did not work', error);
+        }
     });
 }
 
@@ -79,15 +83,3 @@ export function init() {
         { urls: ["<all_urls>"] }
     );
 }
-
-window.addEventListener('DOMContentLoaded', loadSound)
-
-function loadSound() {
-    if (sound) {
-        return;
-    }
-
-    sound = document.getElementById("geigersound");
-    console.debug("Loaded sound:", sound);
-}
-
