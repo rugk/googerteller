@@ -1,4 +1,6 @@
-This add-on does not send any information to the add-on author or any third-party.
+This add-on does not send any personal information to the add-on author or any third-party.
+
+This add-on requests the list of IPs of Google. See https://support.google.com/a/answer/10026322 for more information.
 
 An explanation of all permissions, this add-on requests, can be found at https://github.com/rugk/googerteller/blob/master/assets/texts/en/permissions.md.
 

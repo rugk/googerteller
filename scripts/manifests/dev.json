@@ -18,7 +18,7 @@
   },
 
   // testing version allows loading unit test libraries from CDNs
-  "content_security_policy": "default-src 'self'; img-src data:; style-src 'self' https://unpkg.com; script-src 'self' https://unpkg.com",
+  "content_security_policy": "default-src 'self'; img-src data:; connect-src https://www.gstatic.com; style-src 'self' https://unpkg.com; script-src 'self' https://unpkg.com",
   "icons": {
     "16": "icons/icon-small-colored.svg",
     "32": "icons/icon-small-colored.svg",
@@ -28,7 +28,12 @@
   "default_locale": "en",
 
   "permissions": [
-    "storage"
+    "storage",
+    "webRequest",
+    "webRequestBlocking",
+    "dns",
+    "https://gstatic.com/*",
+    "<all_urls>"
   ],
 
   "applications": {

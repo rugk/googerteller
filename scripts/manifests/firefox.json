@@ -17,7 +17,7 @@
     "page": "background/background.html"
   },
 
-  "content_security_policy": "default-src 'self'",
+  "content_security_policy": "default-src 'self'; connect-src https://www.gstatic.com",
   "icons": {
     "16": "icons/icon-small-colored.svg",
     "32": "icons/icon-small-colored.svg",
@@ -27,8 +27,14 @@
   "default_locale": "en",
 
   "permissions": [
-    "storage"
+    "storage",
+    "webRequest",
+    "webRequestBlocking",
+    "dns",
+    "https://gstatic.com/*",
+    "<all_urls>"
   ],
+
   "applications": {
     "gecko": {
       "id": "googer-teller@rugk.github.io",

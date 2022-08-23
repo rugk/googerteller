@@ -7,13 +7,9 @@
 
 <img height="200" width="200" src="assets/header.svg">
 
-This is a (Firefox) add-on (WebExtension) …
+This is a (Firefox) add-on (WebExtension) that emits a sound every time you connect to a service hosted by Google.
 
-In contrast to many other add-ons, …
-
-It is/has/features…
-
-It is inspired by …. This extension only works with modern Firefox v60 or higher.
+It is inspired by [@berthubert](https://github.com/berthubert)'s [googerteller](https://github.com/berthubert/googerteller) that you can use outside of your browser to do the same.
 
 ## Download
 
