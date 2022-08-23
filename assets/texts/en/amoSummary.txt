@@ -1,1 +1,1 @@
-This add-on allows you to …
+A Geiger counter for Google emitting a sound for each request that goes to Google.

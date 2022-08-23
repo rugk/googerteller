@@ -1,0 +1,2 @@
+This extension uses https://www.npmjs.com/package/is-in-subnet in unmodified form.
+It is included via node_modules and only the unminified browser version is used.

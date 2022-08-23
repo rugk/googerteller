@@ -13,8 +13,8 @@ It is inspired by [@berthubert](https://github.com/berthubert)'s [googerteller](
 
 **This is a fun project, don't take it too seriously!**
 
-**Note:** Find it ironic or not, but to query the list of all Google IPs/Subnets, this needs to congtact one Google domain, actually.
-(That request does not yet emit a sound, though.)
+**Note:** Find it ironic or not, but to query the list of all Google IPs/subnets, this needs to contact one Google domain, actually.
+(That request does not emit a sound, though.)
 
 ## Download
 
