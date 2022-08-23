@@ -7,6 +7,9 @@ const googleCloudIpApi = 'https://www.gstatic.com/ipranges/cloud.json'; // TODO:
 let ipv4Checker = null;
 let ipv6Checker = null;
 
+// var sound = new Audio(browser.runtime.getURL("/src/background/geigersound.ogg"));
+let sound;
+
 /**
  * Fetch the latest Google IP ranges.
  */
@@ -49,7 +52,18 @@ async function listener(details) {
             console.count('found requests, IPv4');
         } else if (ipv6Checker(requestIp)) {
             console.count('found requests, IPv6');
+        } else {
+            return;
         };
+
+        loadSound();
+
+        // in order to always control a new sound we need to clone the element
+        const temporarySound = sound
+            .cloneNode()
+
+        temporarySound.playbackRate = 0.5;
+        temporarySound.play();
     });
 }
 
@@ -65,3 +79,15 @@ export function init() {
         { urls: ["<all_urls>"] }
     );
 }
+
+window.addEventListener('DOMContentLoaded', loadSound)
+
+function loadSound() {
+    if (sound) {
+        return;
+    }
+
+    sound = document.getElementById("geigersound");
+    console.debug("Loaded sound:", sound);
+}
+
