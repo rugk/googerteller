@@ -20,10 +20,10 @@
   // testing version allows loading unit test libraries from CDNs
   "content_security_policy": "default-src 'self'; img-src data:; connect-src https://www.gstatic.com; style-src 'self' https://unpkg.com; script-src 'self' https://unpkg.com",
   "icons": {
-    "16": "icons/icon-small-colored.svg",
-    "32": "icons/icon-small-colored.svg",
-    "48": "icons/icon-large.svg",
-    "96": "icons/icon-large.svg"
+    "16": "icons/icon.svg",
+    "32": "icons/icon.svg",
+    "48": "icons/icon.svg",
+    "96": "icons/icon.svg"
   },
   "default_locale": "en",
 

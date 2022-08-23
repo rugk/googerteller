@@ -32,6 +32,22 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 
+## Audio
+
+Radioactive sound extracted from a sound FreeSound.org by [cookies+policy](https://freesound.org/people/cookies+policy/), may have been modified in another way.
+source: https://freesound.org/people/cookies+policy/sounds/555922/
+
+Public Domain/CC0 licensed.
+
+## Icon
+
+Icon from OpenClipArt by [manio1](https://openclipart.org/artist/manio1)
+source: https://openclipart.org/detail/253954/radioactive-transparent-icon
+
+Public Domain/CC0 licensed.
+
+See https://openclipart.org/share
+
 ## [lodash](https://github.com/lodash/lodash)
 
 This project includes some source code from lodash.
