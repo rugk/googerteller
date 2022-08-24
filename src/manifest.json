@@ -32,7 +32,7 @@
     "webRequest",
     "webRequestBlocking",
     "dns",
-    "https://gstatic.com/*",
+    "https://www.gstatic.com/*",
     "<all_urls>"
   ],
 
