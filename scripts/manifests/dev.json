@@ -30,9 +30,7 @@
   "permissions": [
     "storage",
     "webRequest",
-    "webRequestBlocking",
     "dns",
-    "https://www.gstatic.com/*",
     "<all_urls>"
   ],
 
