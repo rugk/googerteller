@@ -16,28 +16,26 @@ let sound = new Audio("./geiger.mp3");
  * Fetch the latest Google IP ranges.
  */
 async function fetchIpRanges() {
-    await fetch(googleServiceIpApi).then(response => {
-        if (!response.ok) {
-            console.error(`Error when fetching "${googleServiceIpApi}":`, response);
-            return;
-        }
+    const response = await fetch(googleServiceIpApi);
+    if (!response.ok) {
+        console.error(`Error when fetching "${googleServiceIpApi}":`, response);
+        return;
+    }
 
-        return response.json();
-    }).then(jsonResponse => {
-        const ipv4Prefixes = jsonResponse.prefixes
-            .filter(x => x.ipv4Prefix)
-            .map(x => x.ipv4Prefix);
+    const jsonResponse = await response.json();
+    const ipv4Prefixes = jsonResponse.prefixes
+        .filter(x => x.ipv4Prefix)
+        .map(x => x.ipv4Prefix);
 
-        const ipv6Prefixes = jsonResponse.prefixes
-            .filter(x => x.ipv6Prefix)
-            .flatMap(x => x.ipv6Prefix);
+    const ipv6Prefixes = jsonResponse.prefixes
+        .filter(x => x.ipv6Prefix)
+        .flatMap(x => x.ipv6Prefix);
 
-        console.info("IPv4 addresses found:", ipv4Prefixes);
-        console.info("IPv6 addresses found:", ipv6Prefixes);
+    console.info("IPv4 addresses found:", ipv4Prefixes);
+    console.info("IPv6 addresses found:", ipv6Prefixes);
 
-        ipv4Checker = isInSubnet.createChecker(ipv4Prefixes);
-        ipv6Checker = isInSubnet.createChecker(ipv6Prefixes);
-    });
+    ipv4Checker = isInSubnet.createChecker(ipv4Prefixes);
+    ipv6Checker = isInSubnet.createChecker(ipv6Prefixes);
 }
 
 async function listener(details) {
