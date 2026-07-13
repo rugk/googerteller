@@ -42,7 +42,9 @@ async function fetchIpRanges() {
 
 async function listener(details) {
     const requestUrl = new URL(details.url);
-    var dnsResult = await browser.dns.resolve(requestUrl.host);
+    var dnsResult = await browser.dns.resolve(requestUrl.host, [
+      "priority_low"   
+    ];
 
     if (!ipv4Checker || !ipv6Checker) {
         console.warn('IPv4/IPv6 subnet checker not yet initialized, please wait.');
